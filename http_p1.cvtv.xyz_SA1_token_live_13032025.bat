@@ -28,7 +28,7 @@ del "%CONCAT_LIST%" >nul 2>&1
 :: Ghi liên tục thành các segment nhỏ (60s mỗi segment)
 start "Recording" cmd /c ^
 ffmpeg -i "%TOKEN%" ^
--map 0:1 -map 0:2 -map 0:3? -c copy ^
+-map 0:1 -map 0:2 -map 0:3 -map 0:4? -c copy ^
 -f segment -segment_time 60 -reset_timestamps 1 ^
 "%SEGMENT_DIR%\%OUTPUT_NAME%_%%03d.ts"
 
